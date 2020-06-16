@@ -1,0 +1,14 @@
+image:
+    repository: vsclkonlinedev.azurecr.io/echo
+
+ingress:
+    enabled: true
+    annotations:
+        kubernetes.io/ingress.class: nginx
+    hosts:
+        - paths: ['/echo']
+          host: 'echo.app.online.dev.core.vsengsaas.visualstudio.com'
+    tls: 
+        - hosts: 
+            - '*.app.online.dev.core.vsengsaas.visualstudio.com'
+          secretName: ssl-cert
