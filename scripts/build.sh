@@ -127,7 +127,7 @@ build_project () {
 
     if [ "$skip_upgrade" = false ]; then
         say_verbose "Running: helm upgrade --install $deployment_name $repository_root_dir/out/$deployment_name-$version.tgz --set image.repository=$registry_full_name/$project_image_name $values_file"
-        helm upgrade --install $deployment_name $repository_root_dir/out/$deployment_name-$version.tgz
+        helm upgrade --install $deployment_name $repository_root_dir/out/$deployment_name-$version.tgz --set image.repository=$registry_full_name/$project_image_name $values_file
     fi
 }
 
